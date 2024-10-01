@@ -1,0 +1,125 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Logo Bus -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bus Logo (SVG, 100x100 px)"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/ivBusLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/btnUploadLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Nama Bus -->
+        <EditText
+            android:id="@+id/etBusName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bus Name"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Kelas Bus -->
+        <EditText
+            android:id="@+id/etBusClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bus Class"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Tanggal Keberangkatan -->
+        <EditText
+            android:id="@+id/etDepartureDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Departure Date (yyyy-mm-dd)"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Jam Keberangkatan -->
+        <EditText
+            android:id="@+id/etDepartureTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Departure Time (HH:mm)"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Jam Sampai -->
+        <EditText
+            android:id="@+id/etArrivalTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Arrival Time (HH:mm)"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Harga -->
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price"
+            android:inputType="number"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Total Kursi -->
+        <EditText
+            android:id="@+id/etTotalSeats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Seats"
+            android:inputType="number"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Fasilitas -->
+        <EditText
+            android:id="@+id/etFacilities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Facilities (separated by commas)"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Tentang Bus Ini -->
+        <EditText
+            android:id="@+id/etAboutBus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="About This Bus"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Syarat dan Ketentuan Perjalanan -->
+        <EditText
+            android:id="@+id/etTermsAndConditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Travel Terms and Conditions"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Tombol Submit -->
+        <Button
+            android:id="@+id/btnSubmitBusData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Bus Data"
+            android:layout_marginBottom="10dp" />
+
+    </LinearLayout>
+</ScrollView>
