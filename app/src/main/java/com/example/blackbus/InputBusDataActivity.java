@@ -13,7 +13,7 @@ public class InputBusDataActivity extends AppCompatActivity {
 
     private ImageView ivBusLogo;
     private Button btnUploadLogo, btnSubmitBusData;
-    private EditText etBusName, etBusClass, etDepartureDate, etDepartureTime, etArrivalTime, etPrice, etTotalSeats, etFacilities, etAboutBus, etTermsAndConditions;
+    private EditText etBusName, etBusClass, etDepartureDate, etDepartureTime, etArrivalTime, etPrice, etTotalSeats, etFacilities, etAboutBus, etTermsAndConditions, etOriginCity, etDestinationCity;
     private DatabaseHelper myDb;
 
     @Override
@@ -35,6 +35,8 @@ public class InputBusDataActivity extends AppCompatActivity {
         etFacilities = findViewById(R.id.etFacilities);
         etAboutBus = findViewById(R.id.etAboutBus);
         etTermsAndConditions = findViewById(R.id.etTermsAndConditions);
+        etOriginCity = findViewById(R.id.etOriginCity);
+        etDestinationCity = findViewById(R.id.etDestinationCity);
 
         // Inisialisasi DatabaseHelper
         myDb = new DatabaseHelper(this);
@@ -57,15 +59,18 @@ public class InputBusDataActivity extends AppCompatActivity {
             String facilities = etFacilities.getText().toString();
             String aboutBus = etAboutBus.getText().toString();
             String termsAndConditions = etTermsAndConditions.getText().toString();
+            String originCity = etOriginCity.getText().toString();
+            String destinationCity = etDestinationCity.getText().toString();
 
             if (busName.isEmpty() || busClass.isEmpty() || departureDate.isEmpty() || departureTime.isEmpty() || arrivalTime.isEmpty() ||
-                    priceStr.isEmpty() || totalSeatsStr.isEmpty() || facilities.isEmpty() || aboutBus.isEmpty() || termsAndConditions.isEmpty()) {
+                    priceStr.isEmpty() || totalSeatsStr.isEmpty() || facilities.isEmpty() || aboutBus.isEmpty() || termsAndConditions.isEmpty() ||
+                    originCity.isEmpty() || destinationCity.isEmpty()) {
                 Toast.makeText(InputBusDataActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
             } else {
                 int price = Integer.parseInt(priceStr);
                 int totalSeats = Integer.parseInt(totalSeatsStr);
 
-                boolean isInserted = myDb.insertBusData(busName, busClass, departureDate, departureTime, arrivalTime, price, totalSeats, facilities, aboutBus, termsAndConditions);
+                boolean isInserted = myDb.insertBusData(busName, busClass, departureDate, departureTime, arrivalTime, price, totalSeats, facilities, aboutBus, termsAndConditions, originCity, destinationCity);
                 if (isInserted) {
                     Toast.makeText(InputBusDataActivity.this, "Bus data submitted successfully", Toast.LENGTH_SHORT).show();
                     finish(); // Kembali ke halaman sebelumnya
